@@ -12,7 +12,7 @@ def main():
     with open(full_config) as conf:
         global_config = yaml.load(conf)
         loop = asyncio.get_event_loop()
-        handlers = build_handlers(global_config)
+        handlers = build_handlers()
         ap = atomicpuppy.AtomicPuppy(global_config, handlers, loop)
 
     loop.add_signal_handler(signal.SIGINT, ap.stop)
