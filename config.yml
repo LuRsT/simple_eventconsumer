@@ -1,0 +1,16 @@
+atomicpuppy:
+    host: eventstore
+    port: 2113
+    instance: 'eventstore_reader'
+    streams:
+        - hello
+    counter:
+        class: RedisCounter
+        package: atomicpuppy
+        parameters:
+            host: 'redis_db'
+            port: '6379'
+
+redis:
+    host: 'redis_db'
+    port: '6379'

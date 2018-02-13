@@ -1,0 +1,24 @@
+eventstore:
+    image: "eventstore/eventstore"
+    ports:
+        - "2113:2113"
+
+redis_db:
+    image: "redis"
+    ports:
+        - "6379:6379"
+
+eventconsumer:
+  build: .
+  dockerfile: Dockerfile
+  user: root
+  environment:
+    - EVENTSTORE_HOST_URL=eventstore
+    - EVENTSTORE_PORT=2113
+    - REDIS_HOST=redis_db
+    - REDIS_PORT=6379
+
+  links:
+      - eventstore
+      - redis_db
+  command: ./entrypoint_compose.sh
