@@ -1,1 +1,1 @@
-AtomicPuppy==1.3.0
+AtomicPuppy==1.4.0
