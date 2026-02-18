@@ -2,6 +2,7 @@
 
 This is the simplest python event consumer using eventstore I could think of.
 
+NOTE: Archived, this is a very outdated project, it no longer works. Atomic puppy is also outdated.
 
 ## Requirements:
 
